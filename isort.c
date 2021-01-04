@@ -39,7 +39,7 @@ int main()
     	printf("before sorting:\n");
     	print_array(arr , LENGTH);
     	insertion_sort(arr,LENGTH);
-    	printf("\nbefore sorting\n");
+    	printf("\nafter sorting\n");
     	print_array(arr , LENGTH);
    	free(arr);
     return 0;
