@@ -133,10 +133,12 @@ void print_similar_words(char * str)
 int main()
 {
     	char word[WORD];
-    	char  action;
+    	char  action, line;
     	getword_length(word);
     	scanf("%c", &action);
-   
+   	scanf("%c", &line);
+   	scanf("%c", &line);
+   	
     	if (action == 'a')
         	print_lines(word);
     	else if (action == 'b')
