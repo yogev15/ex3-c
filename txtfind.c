@@ -136,7 +136,7 @@ int main()
     	char  action, line;
     	getword_length(word);
     	scanf("%c", &action);
-   	//scanf("%c", &line);
+   	scanf("%c", &line);
    	//scanf("%c", &line);
    	
     	if (action == 'a')
