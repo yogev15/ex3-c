@@ -124,7 +124,7 @@ void print_similar_words(char * str)
     	char s[WORD];
     	while(getword_length(s) > 0)
     	{
-        	if(similar(s,str,1) == 1)
+        	if(similar(s,str,1) == 1 || similar(s,str,0))
             		printf("%s\n" , s);
     	}
 }
@@ -137,7 +137,7 @@ int main()
     	getword_length(word);
     	scanf("%c", &action);
    	scanf("%c", &line);
-   	//scanf("%c", &line);
+   	scanf("%c", &line);
    	
     	if (action == 'a')
         	print_lines(word);
