@@ -35,8 +35,8 @@ int getword_length(char w[])
     	{
          	if(scanf("%c", &c) == 1)
         	{
-        		if(len == 0 && c == ' ')
-        			continue;
+        		//if(len == 0 && c == ' ')
+        			//continue;
             		if (c == '\n' || c == '\r' || c == '\t' || c == ' ' || c == '\0' || c == EOF)
             		{
                 		w[len] = '\0';
@@ -136,8 +136,8 @@ int main()
     	char  action, line;
     	getword_length(word);
     	scanf("%c", &action);
-   	scanf("%c", &line);
-   	scanf("%c", &line);
+   	//scanf("%c", &line);
+   	//scanf("%c", &line);
    	
     	if (action == 'a')
         	print_lines(word);
