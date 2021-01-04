@@ -36,10 +36,10 @@ int main()
     	int *arr = (int *) calloc(LENGTH,sizeof(int *));
     	for(int i = 0 ; i < LENGTH; i++)
     		scanf("%d", arr+i);  
-    	printf("before sorting:\n");
-    	print_array(arr , LENGTH);
+    	//printf("before sorting:\n");
+    	//print_array(arr , LENGTH);
     	insertion_sort(arr,LENGTH);
-    	printf("\nafter sorting\n");
+    	//printf("\nafter sorting\n");
     	print_array(arr , LENGTH);
    	free(arr);
     return 0;
