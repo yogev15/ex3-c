@@ -11,7 +11,7 @@ int getline_length(char s[])
 {
     	int len = 0;
     	char c  = getchar();
-    	while(c != '\n' && c =! EOF && len < LINE -1)
+    	while(c != '\n' && c != EOF && len < LINE -1)
     	{
         	s[len++] = c;
         	c=getchar();
@@ -26,7 +26,7 @@ int getword_length(char w[])
 {
     	int len = 0;
     	char c = getchar();
-    	while(c != '\n' && c != '\t' && c !=' ' && c =! EOF && len < WORD -1)
+    	while(c != '\n' && c != '\t' && c !=' ' && c != EOF && len < WORD -1)
     	{
          	w[len++] = c;
          	c = getchar();
@@ -121,19 +121,22 @@ void print_similar_words(char * str)
 int main()
 {
     	char word[WORD];
-    	char  action, line;
+    	char  action;
     	getword_length(word);
     	scanf("%c", &action);
    	
    	getchar();
    	getchar();
    	
+   	printf("\n");
     	if (action == 'a')
         	print_lines(word);
     	else if (action == 'b')
         	print_similar_words(word);
        else
        	printf("ivalid input\n");
+       
+       printf("\n");
    
     return 0;
 }
