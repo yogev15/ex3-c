@@ -7,6 +7,7 @@
 #define LINE 256
 #define WORD 30
 
+//this function gets a string line from the input and initialize it to s and returns the sum of s
 int getline_length(char s[])
 {
     	int len = 0;
@@ -22,6 +23,7 @@ int getline_length(char s[])
     	return len;
 }
 
+//this function gets a string word from the input and initialize it to w and returns the sum of w
 int getword_length(char w[])
 {
     	int len = 0;
@@ -37,6 +39,7 @@ int getword_length(char w[])
     	return len;
 }
 
+//this function returns if the string str1 contains the string str2
 int substring(char * str1, char * str2)
 {
     	int str1_len, str2_len;
@@ -64,7 +67,7 @@ int substring(char * str1, char * str2)
     	return FALSE;
 }
 
-
+//the function returns if the string t is similar to string s with omitting n leters from s
 int similar(char *s, char *t, int n)
 {
     	int s_len, t_len;
@@ -97,6 +100,7 @@ int similar(char *s, char *t, int n)
         	return FALSE;
 }
 
+//this function prints all lines from input that contains the string str
 void print_lines(char * str)
 {
     	char s[LINE];
@@ -107,6 +111,7 @@ void print_lines(char * str)
     	}	
 }
 
+//this function prints all words from input that are similar by omitting 1,0 leters to the string str
 void print_similar_words(char * str)
 {
     	char s[WORD];
