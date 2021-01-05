@@ -11,7 +11,7 @@ int getline_length(char s[])
 {
     	int len = 0;
     	char c  = getchar();
-    	while(c != '\n' && c != EOF && len < LINE -1)
+    	while(c != '\n' && c != '\r' && c != '\0' && c != EOF && len < LINE -1)
     	{
         	s[len++] = c;
         	c=getchar();
@@ -26,7 +26,7 @@ int getword_length(char w[])
 {
     	int len = 0;
     	char c = getchar();
-    	while(c != '\n' && c != '\t' && c !=' ' && c != EOF && len < WORD -1)
+    	while(c != '\n' && c != '\t' && c != '\r' && c != '\0' && c !=' ' && c != EOF && len < WORD -1)
     	{
          	w[len++] = c;
          	c = getchar();
