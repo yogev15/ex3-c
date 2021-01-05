@@ -10,42 +10,30 @@
 int getline_length(char s[])
 {
     	int len = 0;
-    	char c;
-    	while(len < LINE)
+    	char c  = getchar();
+    	while(c != '\n' && c =! EOF && len < LINE -1)
     	{
-        	if(scanf("%c", &c) == 1)
-        	{
-            		if (c == '\n' || c == '\r' || c == '\0' || c == EOF)
-            		{
-                		s[len] = '\0';
-                		break;
-            		}
-            	else
-                	s[len++] = c;
-        	}
+        	s[len++] = c;
+        	c=getchar();
     	}
+    	s[len] = '\0';
+    	if(c == EOF)
+    		return EOF;
     	return len;
 }
 
 int getword_length(char w[])
 {
     	int len = 0;
-    	char c;
-    	while(len < WORD)
+    	char c = getchar();
+    	while(c != '\n' && c != '\t' && c !=' ' && c =! EOF && len < WORD -1)
     	{
-         	if(scanf("%c", &c) == 1)
-        	{
-        		//if(len == 0 && c == ' ')
-        			//continue;
-            		if (c == '\n' || c == '\r' || c == '\t' || c == ' ' || c == '\0' || c == EOF)
-            		{
-                		w[len] = '\0';
-                		break;
-            		}
-            		else
-                		w[len++] = c;
-        	}
+         	w[len++] = c;
+         	c = getchar();
     	}
+    	w[len] = '\0';
+    	if(c == EOF)
+    		return EOF;
     	return len;
 }
 
@@ -112,7 +100,7 @@ int similar(char *s, char *t, int n)
 void print_lines(char * str)
 {
     	char s[LINE];
-    	while(getline_length(s) > 0)
+    	while(getline_length(s) != EOF)
     	{
         	if(substring(s,str) == 1)
             		printf("%s\n" , s);
@@ -122,7 +110,7 @@ void print_lines(char * str)
 void print_similar_words(char * str)
 {
     	char s[WORD];
-    	while(getword_length(s) > 0)
+    	while(getword_length(s) != EOF)
     	{
         	if(similar(s,str,1) == 1 || similar(s,str,0))
             		printf("%s\n" , s);
@@ -136,8 +124,9 @@ int main()
     	char  action, line;
     	getword_length(word);
     	scanf("%c", &action);
-   	scanf("%c", &line);
-   	scanf("%c", &line);
+   	
+   	getchar();
+   	getchar();
    	
     	if (action == 'a')
         	print_lines(word);
